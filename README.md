@@ -2,6 +2,13 @@
 
 A robust job scheduling system built with Node.js, Express, MongoDB, Redis, and Bull Queue.
 
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
+![Bull Queue](https://img.shields.io/badge/Bull-FF0000?style=for-the-badge&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+
 ## Features
 
 - **Job Types**: Immediate, Scheduled, Recurring (Cron), and Delayed jobs
