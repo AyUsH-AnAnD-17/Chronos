@@ -5,8 +5,8 @@ const rateLimit = require('express-rate-limit');
 require('dotenv').config();
 
 const connectDB = require('./config/database');
-const connectRedis = require('./config/redis');
-const setupQueue = require('./config/queue');
+const { connectRedis } = require('./config/redis');
+const {setupQueue} = require('./config/queue');
 const logger = require('./utils/logger');
 const errorHandler = require('./middleware/errorHandler');
 
@@ -63,7 +63,7 @@ app.get('/health', (req, res) => {
 });
 
 // 404 handler
-app.use('*', (req, res) => {
+app.use((req, res) => {
   res.status(404).json({
     success: false,
     message: 'Route not found'
@@ -74,36 +74,3 @@ app.use('*', (req, res) => {
 app.use(errorHandler);
 
 module.exports = app;
-
-// src/config/database.js
-const mongoose = require('mongoose');
-const logger = require('../utils/logger');
-
-const connectDB = async () => {
-  try {
-    const conn = await mongoose.connect(process.env.MONGODB_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-
-    logger.info(`📦 MongoDB Connected: ${conn.connection.host}`);
-  } catch (error) {
-    logger.error('Database connection failed:', error);
-    process.exit(1);
-  }
-};
-
-// Connection event listeners
-mongoose.connection.on('connected', () => {
-  logger.info('Mongoose connected to MongoDB');
-});
-
-mongoose.connection.on('error', (err) => {
-  logger.error('Mongoose connection error:', err);
-});
-
-mongoose.connection.on('disconnected', () => {
-  logger.warn('Mongoose disconnected');
-});
-
-module.exports = connectDB;
