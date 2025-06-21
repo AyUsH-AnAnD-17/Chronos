@@ -1,5 +1,8 @@
 # Chronos Web Scheduler Backend
 
+This project aims to develop a robust, reliable, and scalable distributed job scheduling system capable of handling various tasks. The system supports both one-time and recurring jobs and offers comprehensive job lifecycle management features such as creation, execution, failure handling, retries, and monitoring.
+
+Although this system is backend-focused, it exposes a set of well-defined RESTful APIs to facilitate seamless integration with a frontend interface or other services.
 A robust job scheduling system built with Node.js, Express, MongoDB, Redis, and Bull Queue.
 
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
