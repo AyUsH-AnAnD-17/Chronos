@@ -156,13 +156,6 @@ The system supports various job payload types:
 
 ## Development
 
-### Running Tests
-```bash
-npm test
-npm run test:watch
-npm run test:coverage
-```
-
 ### Code Structure
 ```
 src/
@@ -204,5 +197,4 @@ src/
 1. Fork the repository
 2. Create a feature branch
 3. Make your changes
-4. Add tests
-5. Submit a pull request
+4. Submit a pull request
